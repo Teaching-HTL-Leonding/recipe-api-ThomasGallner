@@ -1,0 +1,54 @@
+GET http://localhost:5174/recipes
+
+###
+
+GET http://localhost:5174/recipes/filter-by-title/test
+
+###
+
+GET http://localhost:5174/recipes/filter-by-ingredient/tomato
+
+###
+
+POST http://localhost:5174/recipes
+Content-Type: application/json
+
+{
+    "title": "test-title1",
+    "description": "test-desc",
+    "imageLink": "/home",
+    "ingredients": [
+        {
+            "name": "tomato",
+            "unitOfMeasure": "g",
+            "quantity": 10
+        }
+    ]
+}
+
+###
+
+DELETE http://localhost:5174/recipes/1
+
+###
+
+PUT http://localhost:5174/recipes/3
+Content-Type: application/json
+
+{
+    "title": "test-title-update1",
+    "description": "test-desc",
+    "imageLink": "/home",
+    "ingredients": [
+        {
+            "name": "tomato",
+            "unitOfMeasure": "g",
+            "quantity": 10
+        },
+        {
+            "name": "cucumber",
+            "unitOfMeasure": "g",
+            "quantity": 20
+        }
+    ]
+}
