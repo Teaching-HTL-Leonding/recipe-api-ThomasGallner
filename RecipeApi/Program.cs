@@ -10,7 +10,7 @@ app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/recipes", () => recipes.Values);
 
-app.MapGet("/recipes/filter-by-title", (string filter) => {
+app.MapGet("/recipes/filter-by-title/{filter}", (string filter) => {
     var filterRecipes = new List<Recipe>();
 
     foreach(Recipe r in recipes.Values){
@@ -22,7 +22,7 @@ app.MapGet("/recipes/filter-by-title", (string filter) => {
     return Results.Ok(filterRecipes);
 });
 
-app.MapGet("/recipes/filter-by-ingredient", (string filter) => {
+app.MapGet("/recipes/filter-by-ingredient/{filter}", (string filter) => {
     var filterRecipes = new List<Recipe>();
 
     foreach(Recipe r in recipes.Values){
